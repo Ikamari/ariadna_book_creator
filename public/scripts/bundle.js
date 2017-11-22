@@ -78,7 +78,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 window.$ = window.jQuery = _jquery2.default;
 
-var splitTextToPages = function splitTextToPages(text) {
+var splitTextToPages = function splitTextToPages(text, pageSize) {
     var words = text.split(' ');
     var splittedText = "",
         length = 0,
@@ -91,7 +91,7 @@ var splitTextToPages = function splitTextToPages(text) {
         }
         if (words[i].length > 20) {
             console.log("Skipped: ", words[i]);
-        } else if (words[i].length + length <= 230) {
+        } else if (words[i].length + length <= pageSize) {
             rowText += words[i] + ' ';
             length += words[i].length + 1;
         } else {
@@ -127,8 +127,10 @@ $(document).ready(function () {
         var filename = $("#file-name-input").val(),
             title = $("#title-input").val(),
             author = $("#author-input").val(),
-            text = $("#text-input").val();
-        var pages = splitTextToPages(text);
+            text = $("#text-input").val(),
+            pageSizeInput = $("#page-size-input"),
+            pageSize = pageSizeInput.val() ? pageSizeInput.val() > 250 ? 250 : pageSizeInput.val() : 225;
+        var pages = splitTextToPages(text, pageSize);
         var book = "Title: " + title + "\nAuthor: " + author + "\nPages:\n" + pages;
         uploadFile(book, filename);
     });

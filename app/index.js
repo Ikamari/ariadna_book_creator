@@ -1,7 +1,7 @@
 import jQuery from "jquery";
 window.$ = window.jQuery = jQuery;
 
-const splitTextToPages = (text) => {
+const splitTextToPages = (text, pageSize) => {
     let words = text.split(' ');
     let splittedText = "", length = 0, rowText = "- ";
 
@@ -13,7 +13,7 @@ const splitTextToPages = (text) => {
         }
         if (words[i].length > 20) {
             console.log("Skipped: ", words[i]);
-        } else if(words[i].length + length <= 230) {
+        } else if(words[i].length + length <= pageSize) {
             rowText += words[i] + ' ';
             length += words[i].length + 1;
         } else {
@@ -51,8 +51,11 @@ $(document).ready (() => {
         let filename = $("#file-name-input").val(),
             title = $("#title-input").val(),
             author = $("#author-input").val(),
-            text = $("#text-input").val();
-        let pages = splitTextToPages(text);
+            text = $("#text-input").val(),
+            pageSizeInput = $("#page-size-input"),
+            pageSize = pageSizeInput.val() ? pageSizeInput.val() > 250 ?
+                250 : pageSizeInput.val() : 225;
+        let pages = splitTextToPages(text, pageSize);
         let book = `Title: ${title}\nAuthor: ${author}\nPages:\n${pages}`;
         uploadFile(book, filename)
     })

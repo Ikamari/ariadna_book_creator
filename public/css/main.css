@@ -30,7 +30,7 @@
 .book-creator input::placeholder, textarea::placeholder{
     font-size: 14px;
     font-family: "Comic Sans MS", cursive;
-    color: gainsboro;
+    color: slategray;
 }
 
 #export-button {
@@ -54,4 +54,10 @@
 
 #hidden-export{
     display: none;
+}
+
+.size-hint {
+    font-family: "Comic Sans MS", cursive;
+    color: rebeccapurple;
+    margin: 5px auto;
 }
