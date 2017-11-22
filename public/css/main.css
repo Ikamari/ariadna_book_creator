@@ -1,0 +1,57 @@
+.book-creator {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.book-creator input, textarea {
+    width: 100%;
+    border: 1px solid rebeccapurple;
+    height: 30px;
+    padding: 5px 1px;
+    margin: 3px 0;
+    font-size: 14px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.book-creator input::value, textarea::value {
+    font-family: "Comic Sans MS", cursive;
+}
+
+#text-input {
+    height: 300px;
+    resize: none;
+}
+
+.book-creator input::placeholder, textarea::placeholder{
+    font-size: 14px;
+    font-family: "Comic Sans MS", cursive;
+    color: gainsboro;
+}
+
+#export-button {
+    margin: 10px auto;
+    height: 30px;
+    width: 250px;
+    font-size: 14px;
+    line-height: 30px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    text-align: center;
+    color: white;
+    background-color: rebeccapurple;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    border: none;
+}
+
+#export-button:hover {
+    background-color: mediumpurple;
+}
+
+#hidden-export{
+    display: none;
+}

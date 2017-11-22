@@ -1,0 +1,31 @@
+{
+  "name": "mc_books_in_yml",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ikamari/mc_books_in_yml.git"
+  },
+  "author": "Ikamari",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ikamari/mc_books_in_yml/issues"
+  },
+  "homepage": "https://github.com/Ikamari/mc_books_in_yml#readme",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.32",
+    "@babel/core": "^7.0.0-beta.32",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "webpack": "^3.7.1"
+  }
+}
